@@ -221,8 +221,8 @@ checkDiagonal xs s x y 4 = 4
 checkDiagonal [] s x y i = 0
 checkDiagonal ((Position s c r):xs) s' x y i
    | s == s' && c == (x + 1) && r == (y + 1) = checkDiagonal xs s' c r (i + 1)
-   | s /= s' && c == (x + 1) && r == (y + 1) = checkDiagonal xs s' c r 0
    | s == s' && c == (x - 1) && r == (y + 1) = checkDiagonal xs s' c r (i + 1)
+   | s /= s' && c == (x + 1) && r == (y + 1) = checkDiagonal xs s' c r 0
    | s /= s' && c == (x - 1) && r == (y + 1) = checkDiagonal xs s' c r 0
    |otherwise = checkDiagonal xs s' x y i
 
